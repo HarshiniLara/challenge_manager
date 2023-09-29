@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+.navbar {
+    background-color: #5992c1;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+    justify-content: right;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.logo {
+    display: flex;
+    vertical-align: center;
+}
+
+.logo h2 {
+    font-family: 'Pacifico', cursive;
+    color: #ffffff;
+}
+.logo img {
+    margin-right: 10px;
+    background: #fff;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #325660;
+    background: #fff;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid #325660;
+}
+
+.challenge {
+   margin: 20px; 
+}
+
+.challenge h2, h3 {
+    text-align: center;
+    color: rgb(71, 71, 92);
+    margin-bottom: 20px;
+}
+
+.inp {
+    display: flex;
+    margin: 0 auto;
+    max-width: 300px;
+    flex-direction: column;
+    padding: 20px;
+    border: 3px solid orange;
+    border-left: none;
+    border-right: none;
+}
+
+.inp input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid orange;
+    border-top: none;
+    border-right: none;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.inp input:focus {
+    outline: none;
+    border: 1px solid orange;
+    border-bottom: none;
+    border-left: none;
+}
+
+.inp button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    margin: 10px auto;
+    background: #b4d9f6;
+    cursor: pointer;
+}
+
+.chall {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chall li {
+    list-style: none;
+    min-width: 500px;
+    margin: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(43, 41, 36, 0.5);
+    background: #e4f3ff;
+}
+
+.chall li h3 {
+    margin-top: 20px;
+    background: rgb(71, 71, 92);
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.chall p {
+    margin: 10px;
+    font-size: 18px;
+}
+.chall input {
+    padding: 15px;
+    background: #b4d9f6;
+    border-radius: 5px;
+    border: none;
+}
+.chall input::placeholder {
+    color: #000;
+}
+.chall input:focus {
+    outline: none;
+}
+.chall li button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    margin: 10px auto;
+    background: #b4d9f6;
+    cursor: pointer;
+}
+
+#del {
+    background: rgb(220, 87, 87);
+    color: #fff;
+    border-radius: 100%;
+    width: auto;
+    padding: 15px;
+    cursor: pointer;
+}
+
+#done {
+    background: rgb(185, 228, 185);
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(33, 93, 33);
+}
+
+.challenge-item.ng-enter, .challenge-item.ng-leave {
+    transition: all 0.5s ease;
+    display: block;
+}
+
+/* Animation for entering */
+.challenge-item.ng-enter {
+    opacity: 0;
+}
+
+.challenge-item.ng-enter-active {
+    opacity: 1;
+}
+
+/* Animation for leaving */
+.challenge-item.ng-leave {
+    opacity: 1;
+}
+
+.challenge-item.ng-leave-active {
+    opacity: 0;
+}
+.filter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.filter input {
+    padding: 5px;
+    border: 1px solid orange;
+    border-top: none;
+    border-right: none;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.filter input:focus {
+    outline: none;
+    border: 1px solid orange;
+    border-bottom: none;
+    border-left: none;
+}
+select {
+    padding: 5px;
+    border: 1px solid orange;
+    border-top: none;
+    border-right: none;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+select option {
+    background-color: #e4f3ff; 
+    color: #333;
+}
+
+select:focus {
+    outline: none;
+    border: 1px solid orange;
+    border-bottom: none;
+    border-left: none;
+}
+

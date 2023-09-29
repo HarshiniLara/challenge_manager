@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="challengeApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Challenge App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+    <script src="challengeMaker.js"></script>
+    <link rel="stylesheet" href="challenge.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poiret+One&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div ng-controller="ChallengeController">
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://webstockreview.net/images/hurricane-clipart-simple-2.png" alt="logo" height="30" width="30" />
+            <h2>TheInnerU</h2>
+        </div>
+        <div>
+            <ul>
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/health">Health</a></li>
+                <li><a href="#/food">Food</a></li>
+                <li><a href="#/lifestyle">Lifestyle</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="challenge">
+        <h2>Challenge Round!!</h2>
+        <h3>The harder the battle, the sweeter the victory</h3>
+        <div class="inp">
+            <input type="text" placeholder="Enter challenge activity" ng-model="newActivity">
+            <input type="number" placeholder="Enter duration (days)" ng-model="newDuration">
+            <button ng-click="addChallenge()">Add Challenge</button>
+        </div>
+        <challenge-filter  sort-order="sortOrder" search-text="searchText" show-completion-percentage="showCompletionPercentage"></challenge-filter>
+        <div class="chall">
+            <ul class="challenge">
+                <li ng-repeat="challenge in challenges | orderBy: sortOrder | filter: searchText" 
+                    class="challenge-item" 
+                    ng-class="{ 'new-challenge': challenge.isNew }">
+                    <div ng-show="!challenge.editing"></div>
+                        <h3>{{ challenge.name }}</h3>
+                        <p>Challenge duration: {{ challenge.duration }} days</p>
+                        <p>Current Day: {{ challenge.current }}</p>
+                        <p ng-if="showCompletionPercentage">Completion Percentage: {{ calculateCompletionPercentage(challenge) }}%</p>
+                        <p>You are still {{ calculateRemainingDays(challenge) }} days to go!</p>
+                        <button ng-click="incrementDay(challenge)">Done for the Day</button>
+                        <p id="done" ng-if="challenge.current >= challenge.duration">
+                            Challenge Completed Successfully!
+                        </p>
+                        <button ng-click="challenge.editing = true">Edit</button>
+                        <button id="del" ng-click="removeChallenge(challenge._id)">X</button>  
+                        <div ng-show="challenge.editing">
+                            <input type="text" placeholder="Enter new name" ng-model="challenge.newName">
+                            <input type="number" placeholder="Enter new duration" ng-model="challenge.newDuration">
+                            <input type="number" placeholder="Change current day" ng-model="challenge.newCurr">
+                            <button ng-click="editChallenge(challenge)">Submit</button>
+                            <button ng-click="challenge.editing = false">Cancel</button>
+                        </div> 
+                    </div>                 
+                </li>
+            </ul>
+        </div>        
+    </div>
+</div>
+
+</body>
+</html>

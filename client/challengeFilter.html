@@ -1,0 +1,18 @@
+<div class="filter">
+    <div>
+        <label>Sort by:
+            <select ng-model="sortOrder">
+                <option value="activity">Activity</option>
+                <option value="duration">Duration</option>
+            </select>
+        </label>
+    </div>
+    <div>
+        <label>Search:
+            <input type="text" ng-model="searchText">
+        </label>
+    </div>
+    <div>
+        <input type="checkbox" ng-model="showCompletionPercentage"> Show Completion Percentage
+    </div>
+</div>
